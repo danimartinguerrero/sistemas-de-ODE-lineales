@@ -199,6 +199,15 @@
    \if\relax\detokenize{#1}\relax\else\ \textcolor{muted}{(#1)}\fi\textcolor{gold}{.}\ \ignorespaces}
   {\par\addvspace{8pt}}
 
+\NewDocumentEnvironment{notacion}{O{}}
+  {\par\addvspace{8pt}\refstepcounter{entorno}\noindent
+   {\color{acc}\bfseries Notación~\theentorno}%
+   \if\relax\detokenize{#1}\relax\else\ \textcolor{muted}{(#1)}\fi\textcolor{acc}{.}\ \ignorespaces}
+  {\par\addvspace{8pt}}
+\NewDocumentEnvironment{justificacion}{}
+  {\par\addvspace{6pt}\noindent{\bfseries\itshape Justificación.}\ \ignorespaces}
+  {\par\nobreak\vspace{-2pt}\noindent\hfill\textcolor{muted}{\small$\blacksquare$}\par\addvspace{8pt}}
+
 % Problemas del seminario
 \newcounter{problema}[section]
 \renewcommand\theproblema{\thesection.\arabic{problema}}
@@ -300,6 +309,7 @@
 \setlength{\parskip}{1pt plus 1pt}
 \linespread{1.06}
 \raggedbottom
+\setlength\emergencystretch{2.5em}
 % Flotantes: preferir arriba de página antes que páginas sólo de figuras
 \renewcommand\topfraction{0.9}
 \renewcommand\bottomfraction{0.8}
