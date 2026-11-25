@@ -46,11 +46,13 @@
 {\color{muted}\small\textls[260]{\textsc{Tema 4\ \ ·\ \ Parte I}}}\par
 \vspace{1.25cm}
 {\fontsize{27}{33}\selectfont\bfseries EDO lineales de orden superior\par}
+\vspace{0.12cm}
+{\fontsize{19}{24}\selectfont\bfseries núcleo, wronskiano y funciones de Green\par}
 \vspace{0.55cm}
 {\color{acc}\rule{2.4cm}{0.8pt}}\par
 \vspace{0.45cm}
-{\color{muted}\small\itshape Parte I\quad·\quad Estructura de las soluciones, coeficientes constantes\par
-y funciones de Green\par}
+{\color{muted}\small\itshape Operador lineal\quad·\quad Sistema fundamental y wronskiano\quad·\quad Coeficientes constantes\par
+Raíces múltiples\quad·\quad Variación de las constantes\quad·\quad Funciones de Green\par}
 \vspace{0.45cm}
 \includegraphics[width=0.86\textwidth]{figuras/portada_t4p1.png}\par
 \vspace{0.35cm}
@@ -68,22 +70,21 @@ y funciones de Green\par}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.32\textwidth}\raggedleft
 {\color{acc}\footnotesize\textls[200]{\textsc{Apuntes formalizados}}}\par\vspace{2pt}
-{\small Salamanca, curso 2026/2027}
+{\small Salamanca, curso 2026/2027}\\[1pt]
+{\footnotesize\color{muted}Teoría y ejemplos resueltos}
 \end{minipage}
 \end{titlepage}
 
 % =====================================================================
-%  RESUMEN E ÍNDICE
+%  ÍNDICE
 % =====================================================================
 \setcounter{page}{2}
-\begin{center}
-{\color{acc}\small\textls[180]{\textsc{Ecuaciones Diferenciales\ \ ·\ \ Tema 4}}}\par\vspace{10pt}
-{\LARGE\bfseries Ecuaciones diferenciales lineales\\[2pt] de orden superior y funciones de Green\par}
-\vspace{8pt}{\color{acc}\rule{2.4cm}{0.8pt}}\par\vspace{8pt}
-{\normalsize Daniel Martín Guerrero}\par\vspace{2pt}
-{\small\itshape\color{muted} Grado en Física, Facultad de Ciencias, Universidad de Salamanca}
-\end{center}
-\vspace{10pt}
+{\hypersetup{linkcolor=fg}\tableofcontents}
+\clearpage
+
+% =====================================================================
+\section{Planteamiento y estructura de la solución}\label{sec:planteamiento}
+% =====================================================================
 
 \begin{motivacion}{Resumen}
 Estudiamos la ecuación lineal de orden $n$ $\Lop[y]=a_n(x)\,y^{(n)}+\dots+a_0(x)\,y=b(x)$. Toda la teoría descansa en
@@ -102,14 +103,6 @@ raíces múltiples, variación de las constantes, función de Green, delta de Di
 \smallskip
 \textcolor{acc}{\textsc{MSC 2020.}} 34A30, 34A05, 34B27.
 \end{motivacion}
-
-\clearpage
-{\hypersetup{linkcolor=fg}\tableofcontents}
-\clearpage
-
-% =====================================================================
-\section{Planteamiento y estructura de la solución}\label{sec:planteamiento}
-% =====================================================================
 
 Todo el tema descansa sobre una sola propiedad: el operador diferencial es lineal. De ella se siguen tres hechos: que la
 solución general es «homogénea más particular», que las soluciones de la homogénea forman un espacio vectorial de
