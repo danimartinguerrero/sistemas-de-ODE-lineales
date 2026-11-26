@@ -220,6 +220,54 @@
   {\par\addvspace{4pt}\noindent{\bfseries\itshape Resolución.}\par\nobreak\vspace{2pt}}
   {\par\nobreak\vspace{-2pt}\noindent\hfill\textcolor{muted}{\small$\blacksquare$}\par\addvspace{8pt}}
 
+% ---------------------------------------------------------------------
+%  Numeración fijada a mano (para reproducir la de un documento previo)
+%  \fijanum{2.3} antes de un entorno numerado: muestra y referencia 2.3
+% ---------------------------------------------------------------------
+\let\@numfijo\relax
+\newcommand\fijanum[1]{\gdef\@numfijo{#1}}
+\renewcommand\theentorno{\ifx\@numfijo\relax\thesection.\arabic{entorno}\else\@numfijo\fi}
+\renewcommand\theproblema{\ifx\@numfijo\relax\thesection.\arabic{problema}\else\@numfijo\fi}
+\@for\@nombre:={definicion,proposicion,lema,corolario,teorema,observacion,ejemplo,%
+  recordatorio,notacion,problema,algoritmo,enunciado}\do{%
+  \AddToHook{env/\@nombre/end}{\global\let\@numfijo\relax}}
+
+% Modelo físico (caja con marco celeste, sin número)
+\NewDocumentEnvironment{modelo}{m}
+  {\begin{tcolorbox}[baseoscuro,colframe=sky,boxed title style={colframe=sky},
+     title={\textcolor{sky}{\textsc{Modelo}}\ \textcolor{fg}{\itshape #1}}]\upshape}
+  {\end{tcolorbox}}
+
+% Algoritmo con pasos «Paso k.»
+\newlist{pasosalg}{enumerate}{1}
+\setlist[pasosalg]{label=\textcolor{acc}{\textsc{Paso~\arabic*.}},leftmargin=4.4em,labelsep=0.6em,
+  itemsep=3pt,topsep=4pt,align=left}
+\newcounter{algoritmo}[section]
+\NewDocumentEnvironment{algoritmo}{O{}}
+  {\refstepcounter{entorno}%
+   \begin{tcolorbox}[enhanced,breakable,colback=boxbg,coltext=fg,frame hidden,
+     borderline west={2.2pt}{0pt}{acc},arc=0pt,left=10pt,right=10pt,top=7pt,bottom=7pt,
+     before skip=12pt,after skip=12pt]%
+   {\textcolor{acc}{\textsc{Algoritmo~\theentorno}}%
+    \if\relax\detokenize{#1}\relax\else\ \textcolor{fg}{\itshape(#1)}\fi}\par\vspace{3pt}}
+  {\end{tcolorbox}}
+
+% Desarrollo guiado (barra lavanda)
+\newtcolorbox{desarrollo}[1]{enhanced,breakable,colback=boxbg,coltext=fg,frame hidden,
+  borderline west={2.2pt}{0pt}{lav},arc=0pt,left=10pt,right=10pt,top=7pt,bottom=7pt,
+  before skip=12pt,after skip=12pt,
+  before upper={\textcolor{lav}{\textsc{Desarrollo}}\ \textcolor{fg}{\itshape #1}\par\vspace{3pt}}}
+
+% Enunciado de problema (barra dorada)
+\NewDocumentEnvironment{enunciado}{O{}}
+  {\refstepcounter{problema}%
+   \begin{tcolorbox}[enhanced,breakable,colback=boxbg,coltext=fg,frame hidden,
+     borderline west={2.2pt}{0pt}{gold},arc=0pt,left=10pt,right=10pt,top=6pt,bottom=6pt,
+     before skip=8pt,after skip=8pt]%
+   {\color{gold}\bfseries Problema~\theproblema}%
+   \if\relax\detokenize{#1}\relax\else\ \textcolor{muted}{(#1)}\fi\textcolor{gold}{.}\ \ignorespaces}
+  {\end{tcolorbox}}
+
 % Cajas con barra lateral: método, nota, motivación, consejo
 \newtcolorbox{metodo}[1]{enhanced,breakable,colback=boxbg,coltext=fg,frame hidden,
   borderline west={2.2pt}{0pt}{acc},arc=0pt,left=10pt,right=10pt,top=7pt,bottom=7pt,
