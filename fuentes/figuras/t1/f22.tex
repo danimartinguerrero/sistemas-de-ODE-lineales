@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11.5cm,height=8cm,xmin=-2,xmax=2.5,ymin=-10,ymax=10,xtick={-2,-1,1,2},ytick={-10,-5,5,10},xlabel={$x$},ylabel={$y$},samples=150,domain=-2:2.5]
+\addplot[c0,line width=0.75pt] {(-2)*exp(x)+1/(-2)};
+\addplot[c1,line width=0.75pt] {(-1)*exp(x)+1/(-1)};
+\addplot[c2,line width=0.75pt] {(-0.5)*exp(x)+1/(-0.5)};
+\addplot[c3,line width=0.75pt] {(0.5)*exp(x)+1/(0.5)};
+\addplot[c4,line width=0.75pt] {(1)*exp(x)+1/(1)};
+\addplot[c5,line width=0.75pt] {(2)*exp(x)+1/(2)};
+\addplot[gold,line width=1.4pt,dashed] {2*exp(x/2)}; \addplot[gold,line width=1.4pt,dashed] {-2*exp(x/2)};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolventes $y=\pm2\e^{x/2}$}\quad \leyenda{c0}{$k=-2$}\quad\leyenda{c1}{$k=-1$}\quad\leyenda{c2}{$k=-0.5$}\quad\leyenda{c3}{$k=0.5$}\quad\leyenda{c4}{$k=1$}\quad\leyenda{c5}{$k=2$}}

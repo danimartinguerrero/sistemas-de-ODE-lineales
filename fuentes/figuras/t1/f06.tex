@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=1.5]
+\draw[muted,line width=0.4pt,-{Stealth[length=4pt]}] (-2,0) -- (2.2,0) node[right,fg,font=\small] {$x$};
+\draw[muted,line width=0.4pt,-{Stealth[length=4pt]}] (0,-1.6) -- (0,2.1) node[above,fg,font=\small] {$y$};
+\draw[c0,line width=0.9pt] (-1.2,-1.007) -- (1.9,1.594);
+\draw[c5,line width=0.9pt] (-1.35,1.609) -- (1.35,-1.609);
+\node[c0,font=\scriptsize,anchor=west] at (1.95,1.62) {pendiente $y_x=\tan\alpha$};
+\node[c5,font=\scriptsize,anchor=west] at (1.4,-1.65) {pendiente $\hat y_{\hat x}=\tan\big(\alpha+\tfrac\pi2\big)$};
+\draw[c0,line width=0.6pt,-{Stealth[length=4pt]}] (0.55,0) arc (0:40:0.55);
+\node[c0,font=\scriptsize] at (20:0.75) {$\alpha$};
+\draw[c5,line width=0.6pt,dashed,-{Stealth[length=4pt]}] (0.95,0) arc (0:130:0.95);
+\node[c5,font=\scriptsize,anchor=south] at (100:1.0) {$\alpha+\frac\pi2$};
+\begin{scope}[rotate=40]
+\draw[fg,line width=0.5pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
+\end{scope}
+\fill[fg] (0,0) circle (1.2pt);
+\end{tikzpicture}

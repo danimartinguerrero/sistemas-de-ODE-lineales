@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=10.5cm,height=8.6cm,xmin=-2.5,xmax=2.5,ymin=-4,ymax=4,xtick={-2,-1,1,2},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},samples=150,domain=-2.5:2.5]
+\addplot[c0,line width=0.75pt] {(-2)*x^2/2+1/(2*(-2))};
+\addplot[c1,line width=0.75pt] {(-1)*x^2/2+1/(2*(-1))};
+\addplot[c2,line width=0.75pt] {(-0.5)*x^2/2+1/(2*(-0.5))};
+\addplot[c3,line width=0.75pt] {(-0.25)*x^2/2+1/(2*(-0.25))};
+\addplot[c4,line width=0.75pt] {(0.25)*x^2/2+1/(2*(0.25))};
+\addplot[c5,line width=0.75pt] {(0.5)*x^2/2+1/(2*(0.5))};
+\addplot[lav,line width=0.75pt] {(1)*x^2/2+1/(2*(1))};
+\addplot[c0,line width=0.75pt] {(2)*x^2/2+1/(2*(2))};
+\addplot[gold,line width=1.4pt,dashed,samples=2] {x}; \addplot[gold,line width=1.4pt,dashed,samples=2] {-x};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolventes $y=\pm x$}\quad \leyenda{c0}{$k=-2$}\quad\leyenda{c1}{$k=-1$}\quad\leyenda{c2}{$k=-0.5$}\quad\leyenda{c3}{$k=-0.25$}\quad\leyenda{c4}{$k=0.25$}\quad\leyenda{c5}{$k=0.5$}\quad\leyenda{lav}{$k=1$}\quad\leyenda{c0}{$k=2$}}

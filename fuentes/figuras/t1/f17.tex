@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=10cm,height=8.6cm,xmin=-2.5,xmax=2.5,ymin=-2.5,ymax=2.5,
+  xtick={-2,-1,1,2},ytick={-2,-1,1,2},xlabel={$x$},ylabel={$y$},samples=200,
+  declare function={xpos(\t,\c)=(-4*\t+sqrt(16*\t^2+20*\t^4+10*\c))/5; xneg(\t,\c)=(-4*\t-sqrt(16*\t^2+20*\t^4+10*\c))/5;}]
+\addplot[c0,domain=-2.5:2.5] ({xpos(x,1)},{x}); \addplot[c0,domain=-2.5:2.5] ({xneg(x,1)},{x});
+\addplot[c2,domain=-2.5:2.5] ({xpos(x,5)},{x}); \addplot[c2,domain=-2.5:2.5] ({xneg(x,5)},{x});
+\addplot[c3,domain=-2.5:2.5] ({xpos(x,10)},{x}); \addplot[c3,domain=-2.5:2.5] ({xneg(x,10)},{x});
+\addplot[c5,domain=-2.5:2.5] ({xpos(x,20)},{x}); \addplot[c5,domain=-2.5:2.5] ({xneg(x,20)},{x});
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{$C=1$}\quad\leyenda{c2}{$C=5$}\quad\leyenda{c3}{$C=10$}\quad\leyenda{c5}{$C=20$}}

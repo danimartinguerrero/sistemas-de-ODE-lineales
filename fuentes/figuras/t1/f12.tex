@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12cm,height=7.2cm,xmin=-2,xmax=3,ymin=-3,ymax=4,
+  xtick={-2,-1,1,2,3},ytick={-3,-2,-1,1,2,3,4},xlabel={$x$},ylabel={$y$},samples=400,
+  restrict y to domain=-4:5]
+\addplot[c0,domain=1.2609:3] {ln(x^3-2)};
+\addplot[c1,domain=0.05:3] {ln(x^3)};
+\addplot[c3,domain=-1.2599+0.0005:3] {ln(x^3+2)};
+\addplot[c5,domain=-1.5874+0.0002:3] {ln(x^3+4)};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $y=\ln(x^3+C)$:\quad\leyenda{c0}{$C=-2$}\quad\leyenda{c1}{$C=0$}\quad\leyenda{c3}{$C=2$}\quad\leyenda{c5}{$C=4$}}

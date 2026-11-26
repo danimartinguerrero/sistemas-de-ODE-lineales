@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=11.5cm,height=7cm,xmin=0,xmax=10,ymin=0,ymax=14,
+  xtick={0,2,4,6,8,10},ytick={0,2,4,6,8,10,12,14},xlabel={$x$},ylabel={$y$},samples=200,domain=0:10]
+\addplot[c0] {1+0.5*x/(x+1)}; \addplot[c1] {1+1*x/(x+1)}; \addplot[c2] {1+2*x/(x+1)};
+\addplot[c3] {1+3*x/(x+1)}; \addplot[c4] {1+6*x/(x+1)}; \addplot[c5] {1+12*x/(x+1)};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $y=a+k\,\dfrac{x}{ax+1}$, $a=1$:\quad\leyenda{c0}{$k=0.5$}\quad\leyenda{c1}{$1$}\quad\leyenda{c2}{$2$}\quad\leyenda{c3}{$3$}\quad\leyenda{c4}{$6$}\quad\leyenda{c5}{$12$}}

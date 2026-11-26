@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11cm,height=8cm,xmin=-3.5,xmax=3.5,ymin=-2.5,ymax=2.5,axis equal image,
+  xtick={-3,-2,-1,1,2,3},ytick={-2,-1,1,2},xlabel={$x$},ylabel={$y$},samples=200,domain=-3.5:3.5]
+\pgfplotsinvokeforeach{1,2,3}{\addplot[c0,line width=0.9pt,domain=0:360] ({#1*cos(x)},{#1/sqrt(2)*sin(x)});}
+\pgfplotsinvokeforeach{0.2,0.5,1.5}{\addplot[c5,line width=0.8pt] {#1*x^2}; \addplot[c5,line width=0.8pt] {-#1*x^2};}
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{elipses $x^2+2y^2=a^2$}\qquad\leyenda{c5}{trayectorias ortogonales $\hat y=k\hat x^2$}}

@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11.5cm,height=7cm,xmin=-2.5,xmax=1.2,ymin=-5,ymax=5,
+  xtick={-2,-1.5,-1,-0.5,0.5,1},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},samples=250,domain=-2.5:1.2]
+\addplot[c0] {(-1+x^3/3)*exp(2*x)}; \addplot[c1] {(-0.5+x^3/3)*exp(2*x)};
+\addplot[c2] {(0+x^3/3)*exp(2*x)}; \addplot[c3] {(0.5+x^3/3)*exp(2*x)}; \addplot[c5] {(1+x^3/3)*exp(2*x)};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $y=\big(c+\tfrac{x^3}{3}\big)\e^{2x}$:\quad\leyenda{c0}{$c=-1$}\quad\leyenda{c1}{$-0.5$}\quad\leyenda{c2}{$0$}\quad\leyenda{c3}{$0.5$}\quad\leyenda{c5}{$1$}}

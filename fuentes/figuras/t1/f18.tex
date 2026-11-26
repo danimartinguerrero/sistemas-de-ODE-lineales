@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=12cm,height=7.4cm,xmin=0,xmax=2.5,ymin=-15,ymax=15,xtick={0,0.5,1,1.5,2,2.5},ytick={-15,-10,-5,0,5,10,15},xlabel={$x$},ylabel={$y$}]
+\addplot[rulec,line width=0.4pt,domain=0:2.5,samples=2] {0};
+\addplot[c0,sharp plot] table {figuras/t1/datos/f18_0.dat};
+\addplot[c1,sharp plot] table {figuras/t1/datos/f18_1.dat};
+\addplot[c2,sharp plot] table {figuras/t1/datos/f18_2.dat};
+\addplot[c3,sharp plot] table {figuras/t1/datos/f18_3.dat};
+\addplot[c4,sharp plot] table {figuras/t1/datos/f18_4.dat};
+\addplot[c5,sharp plot] table {figuras/t1/datos/f18_5.dat};
+\addplot[lav,sharp plot] table {figuras/t1/datos/f18_6.dat};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize \leyenda{c0}{$C=2$}\quad\leyenda{c1}{$C=5$}\quad\leyenda{c2}{$C=10$}\quad\leyenda{c3}{$C=20$}\quad\leyenda{c4}{$C=50$}\quad\leyenda{c5}{$C=100$}\quad\leyenda{lav}{$C=200$}}

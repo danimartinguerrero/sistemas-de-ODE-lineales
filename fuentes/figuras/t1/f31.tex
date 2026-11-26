@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=11.5cm,height=7cm,xmin=0,xmax=10,ymin=0,ymax=10,xtick={0,2,4,6,8,10},ytick={0,2,4,6,8,10},xlabel={$x$},ylabel={$y$},samples=2,domain=0:10]
+\addplot[c0,line width=0.75pt] {2*(1)-(1)^2*x/6};
+\addplot[c1,line width=0.75pt] {2*(2)-(2)^2*x/6};
+\addplot[c2,line width=0.75pt] {2*(4)-(4)^2*x/6};
+\addplot[fg,line width=1.4pt,samples=200,domain=0.6:10] {6/x};
+\addplot[only marks,mark=*,mark size=1.6pt,fg] coordinates {(1.5,4) (6,1)}; \addplot[only marks,mark=*,mark size=2.4pt,gold] coordinates {(3,2)};
+\node[gold,font=\scriptsize,anchor=south west] at (axis cs:3.1,2.15) {$(3,2)$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{fg}{$y=6/x$ (envolvente)}\quad tangentes:\ \leyenda{c0}{$y_0=1$}\quad\leyenda{c1}{$y_0=2$}\quad\leyenda{c2}{$y_0=4$}}

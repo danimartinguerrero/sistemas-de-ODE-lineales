@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12cm,height=7.6cm,xmin=-2,xmax=4,ymin=-3,ymax=3,
+  xtick={-2,-1,1,2,3,4},ytick={-3,-2,-1,1,2,3},xlabel={$x$},ylabel={$y$},samples=200]
+\addplot[muted,line width=0.4pt,-{Stealth[length=2.6pt,width=2.2pt]},
+  quiver={u=\thisrow{u},v=\thisrow{v}}] table[x=x,y=y] {figuras/t1/datos/f09_campo.dat};
+
+\addplot[c0,line width=0.9pt,domain=-2:4] {x-1-0.3*exp(-x)};
+\addplot[c1,line width=0.9pt,domain=-2:4] {x-1-0.05*exp(-x)};
+\addplot[c2,line width=0.9pt,domain=-2:4] {x-1+0.1*exp(-x)};
+\addplot[c3,line width=0.9pt,domain=-2:4] {x-1+0.4*exp(-x)};
+\addplot[c4,line width=0.9pt,domain=-2:4] {x-1+1*exp(-x)};
+\addplot[c5,line width=0.9pt,domain=-2:4] {x-1+2*exp(-x)};
+\addplot[fg,line width=1.2pt,domain=-2:4] {x-1};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize curvas integrales $y=x-1+C\,\e^{-x}$; en blanco, $C=0$ (la recta $y=x-1$, a la que tienden todas)}

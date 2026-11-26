@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=9cm,height=10cm,xmin=-3,xmax=3,ymin=-4,ymax=4,axis equal image,
+  xtick={-2,-1,1,2},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},samples=200,domain=-4:4]
+\pgfplotsinvokeforeach{0.5,1,1.5}{\addplot[c0,line width=0.85pt] ({(x^2-(#1)^2)/(2*#1)},{x});}
+\pgfplotsinvokeforeach{0.5,1,1.5}{\addplot[c5,line width=0.85pt] ({(x^2-(#1)^2)/(-2*#1)},{x});}
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $y^2=2kx+k^2$:\quad\leyenda{c0}{ramas $k>0$}\qquad\leyenda{c5}{ramas $k<0$}}

@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12cm,height=7.6cm,xmin=-3,xmax=3,ymin=-5,ymax=5,
+  xtick={-3,-2,-1,1,2,3},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},
+  restrict y to domain=-15:15,samples=150,
+  declare function={sol(\x,\c)=(2*\c+\x^2)/(\x*(2*\c-\x^2)); solpart(\x)=1/\x;}]
+\addplot[gold,line width=1.4pt,domain=-3:-0.05] {solpart(x)};
+\addplot[gold,line width=1.4pt,domain=0.05:3] {solpart(x)};
+\node[gold,font=\scriptsize,anchor=south west] at (axis cs:2.2,0.55) {$y_p=1/x$};
+\addplot[c0,domain=-3:-1.45] {sol(x,1)}; \addplot[c0,domain=-1.35:-0.05] {sol(x,1)};
+\addplot[c0,domain=0.05:1.35] {sol(x,1)}; \addplot[c0,domain=1.45:3] {sol(x,1)};
+\addplot[c4,domain=-3:-2.05] {sol(x,2)}; \addplot[c4,domain=-1.95:-0.05] {sol(x,2)};
+\addplot[c4,domain=0.05:1.95] {sol(x,2)}; \addplot[c4,domain=2.05:3] {sol(x,2)};
+\draw[muted,line width=0.4pt,dashed] (axis cs:1.4142,-5) -- (axis cs:1.4142,5);
+\draw[muted,line width=0.4pt,dashed] (axis cs:-1.4142,-5) -- (axis cs:-1.4142,5);
+\draw[muted,line width=0.4pt,dashed] (axis cs:2,-5) -- (axis cs:2,5);
+\draw[muted,line width=0.4pt,dashed] (axis cs:-2,-5) -- (axis cs:-2,5);
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{gold}{$y_p=1/x$}\qquad\leyenda{c0}{$c_0=1$ (polos en $x=0,\pm\sqrt2$)}\qquad\leyenda{c4}{$c_0=2$ (polos en $x=0,\pm2$)}}

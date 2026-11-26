@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12.6cm,height=6.8cm,xmin=-3,xmax=3,ymin=-2.6,ymax=5.3,
+  xtick={-3,-2,-1,1,2,3},ytick={-2,-1,1,2,3,4,5},xlabel={$x$},ylabel={$z(x)$},samples=200]
+\addplot[c0,dotted,line width=0.8pt,domain=-3:3] {1*exp(-x^2)};
+\addplot[c2,dotted,line width=0.8pt,domain=-3:3] {3*exp(-x^2)};
+\addplot[c3,dotted,line width=0.8pt,domain=-3:3] {5*exp(-x^2)};
+\addplot[c0,domain=-3:3] {1*exp(-x^2)-2};
+\addplot[c2,domain=-3:3] {3*exp(-x^2)-2};
+\addplot[c3,domain=-3:3] {5*exp(-x^2)-2};
+\addplot[c5,line width=1.3pt,domain=-3:3,samples=2] {-2};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c5}{$z_p=-2$}\quad continuo: $z_g=C\e^{-x^2}-2$\quad punteado: $z_h=C\e^{-x^2}$\quad
+\leyenda{c0}{$C=1$}\ \leyenda{c2}{$C=3$}\ \leyenda{c3}{$C=5$}}

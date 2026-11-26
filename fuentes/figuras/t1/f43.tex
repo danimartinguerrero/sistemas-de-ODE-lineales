@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=10cm,height=8.6cm,xmin=-3,xmax=3,ymin=-3,ymax=3,xtick={-3,-2,-1,1,2,3},ytick={-3,-2,-1,1,2,3},xlabel={$x$},ylabel={$y$}]
+\addplot[c0,sharp plot] table {figuras/t1/datos/f43_0.dat};
+\addplot[c1,sharp plot] table {figuras/t1/datos/f43_1.dat};
+\addplot[c2,sharp plot] table {figuras/t1/datos/f43_2.dat};
+\addplot[c3,sharp plot] table {figuras/t1/datos/f43_3.dat};
+\addplot[c4,sharp plot] table {figuras/t1/datos/f43_4.dat};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize \leyenda{c0}{$C=-10$}\quad\leyenda{c1}{$C=-3$}\quad\leyenda{c2}{$C=0$}\quad\leyenda{c3}{$C=3$}\quad\leyenda{c4}{$C=10$}}

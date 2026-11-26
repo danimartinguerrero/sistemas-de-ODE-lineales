@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=9.6cm,height=9.6cm,xmin=-4,xmax=4,ymin=-4,ymax=4,axis equal image,
+  xtick={-4,-2,2,4},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},samples=300]
+\pgfplotsinvokeforeach{0.5,2,4}{
+  \addplot[c0,domain=0.05:4] {#1/x}; \addplot[c0,domain=-4:-0.05] {#1/x};
+  \addplot[c0,dashed,domain=0.05:4] {-#1/x}; \addplot[c0,dashed,domain=-4:-0.05] {-#1/x};
+}
+\pgfplotsinvokeforeach{0.5,2,4}{
+  \addplot[c5,domain=-4:4] {sqrt(x^2+#1)}; \addplot[c5,domain=-4:4] {-sqrt(x^2+#1)};
+  \addplot[c5,dashed,domain=sqrt(#1):4] {sqrt(x^2-#1)}; \addplot[c5,dashed,domain=sqrt(#1):4] {-sqrt(x^2-#1)};
+  \addplot[c5,dashed,domain=-4:-sqrt(#1)] {sqrt(x^2-#1)}; \addplot[c5,dashed,domain=-4:-sqrt(#1)] {-sqrt(x^2-#1)};
+}
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{$xy=C$}\qquad\leyenda{c5}{$y^2-x^2=k$}\qquad continuo: $C,k>0$;\ discontinuo: $C,k<0$}

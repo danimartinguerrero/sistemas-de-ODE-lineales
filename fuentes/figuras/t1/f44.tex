@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11cm,height=8cm,xmin=-2,xmax=5,ymin=-2.5,ymax=2.5,xtick={-2,-1,1,2,3,4,5},ytick={-2,-1,1,2},xlabel={$x$},ylabel={$y$}]
+\addplot[c0,sharp plot] table {figuras/t1/datos/f44_0.dat};
+\addplot[c1,sharp plot] table {figuras/t1/datos/f44_1.dat};
+\addplot[c2,sharp plot] table {figuras/t1/datos/f44_2.dat};
+\addplot[c3,sharp plot] table {figuras/t1/datos/f44_3.dat};
+\addplot[c4,sharp plot] table {figuras/t1/datos/f44_4.dat};
+\addplot[muted,dashed,line width=0.6pt,domain=-2.5:2.5,samples=100] ({x^2},{x});
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize \leyenda{c0}{$k=-5$}\quad\leyenda{c1}{$k=-2$}\quad\leyenda{c2}{$k=2$}\quad\leyenda{c3}{$k=5$}\quad\leyenda{c4}{$k=10$}}
+\quad{\scriptsize\leyendad{muted}{singularidad $x=y^2$}}

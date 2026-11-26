@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=12.6cm,height=6.4cm,xmin=0,xmax=10.2,ymin=-7.5,ymax=11.5,
+  xtick={0,2,4,6,8,10},ytick={-5,0,5,10},xlabel={$x$},ylabel={$y$},samples=400]
+\addplot[rulec,line width=0.4pt,domain=0:10.2,samples=2] {0};
+\addplot[c0,dashed,domain=0:10] {-5*exp(-2*x)+(-0.6*x+1.28)*cos(deg(x))+(1.2*x+0.04)*sin(deg(x))};
+\addplot[c3,dashed,domain=0:10] {5*exp(-2*x)+(-0.6*x+1.28)*cos(deg(x))+(1.2*x+0.04)*sin(deg(x))};
+\addplot[c5,line width=1.2pt,domain=0:10] {(-0.6*x+1.28)*cos(deg(x))+(1.2*x+0.04)*sin(deg(x))};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c5}{solución particular $y_p(x)$}\qquad\leyendad{c0}{solución general, $C=-5$}\qquad\leyendad{c3}{$C=5$}}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=11cm,height=6.6cm,xmin=-1,xmax=1.5,ymin=-7.2,ymax=0.8,
+  xtick={-1,-0.5,0,0.5,1,1.5},ytick={-7,-6,-5,-4,-3,-2,-1,0},xlabel={$x$},ylabel={$y$},samples=200,domain=-1:1.5]
+\addplot[rulec,line width=0.4pt,samples=2] {0};
+\addplot[c5,line width=1.3pt] {-5/6*exp(-x)+3/2*exp(x)-2/3*exp(2*x)};
+\addplot[only marks,mark=*,mark size=2pt,gold] coordinates {(0,0)};
+\node[gold,font=\scriptsize,anchor=south east] at (axis cs:-0.05,0.08) {$y(0)=0$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c5}{$y=-\frac56\e^{-x}+\frac32\e^{x}-\frac23\e^{2x}$}}

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=12cm,height=7cm,xmin=0,xmax=5.1,ymin=-2,ymax=15,
+  xtick={0,1,2,3,4,5},ytick={-2,0,2,4,6,8,10,12,14},xlabel={$x$},ylabel={$y$},samples=2]
+\addplot[rulec,line width=0.4pt,domain=0:5.1] {0};
+\pgfplotsinvokeforeach{0,...,5}{
+  \pgfmathsetmacro\lam{0.4+0.2*#1}
+  \addplot[c#1,line width=0.7pt,domain=0:5.1] {12*\lam-6*\lam^2*x};
+  \addplot[only marks,mark=*,mark size=1.3pt,c#1] coordinates {(1/\lam,6*\lam)};
+}
+\addplot[gold,line width=1.3pt,domain=0.4:5.1,samples=200] {6/x};
+\node[gold,font=\scriptsize,anchor=south west] at (axis cs:3.6,2.0) {envolvente $y=6/x$};
+\end{axis}
+\end{tikzpicture}

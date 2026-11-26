@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11.5cm,height=7cm,xmin=-6,xmax=6,ymin=-5,ymax=5,
+  xtick={-6,-4,-2,2,4,6},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},samples=300,restrict y to domain=-30:30]
+
+\addplot[c0,domain=-6:-0.05] {(sin(deg(x))-2)/x^2}; \addplot[c0,domain=0.05:6] {(sin(deg(x))-2)/x^2};
+\addplot[c1,domain=-6:-0.05] {(sin(deg(x))-1)/x^2}; \addplot[c1,domain=0.05:6] {(sin(deg(x))-1)/x^2};
+\addplot[c2,domain=-6:-0.02] {(sin(deg(x))+0)/x^2}; \addplot[c2,domain=0.02:6] {(sin(deg(x))+0)/x^2};
+\addplot[c3,domain=-6:-0.05] {(sin(deg(x))+1)/x^2}; \addplot[c3,domain=0.05:6] {(sin(deg(x))+1)/x^2};
+\addplot[c5,domain=-6:-0.05] {(sin(deg(x))+2)/x^2}; \addplot[c5,domain=0.05:6] {(sin(deg(x))+2)/x^2};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $y=\dfrac{\sin x+c}{x^2}$:\quad\leyenda{c0}{$c=-2$}\quad\leyenda{c1}{$-1$}\quad\leyenda{c2}{$0$}\quad\leyenda{c3}{$1$}\quad\leyenda{c5}{$2$}}

@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11cm,height=8cm,xmin=0,xmax=3,ymin=-3,ymax=6,xtick={1,2,3},ytick={-3,-2,-1,1,2,3,4,5,6},xlabel={$x$},ylabel={$y$},samples=150]
+\addplot[c0,domain=-3:6] ({(0.5-x)^2/2},{x});
+\addplot[c1,domain=-3:6] ({(1-x)^2/4},{x});
+\addplot[c2,domain=-3:6] ({(2-x)^2/8},{x});
+\addplot[c3,domain=-3:6] ({(3-x)^2/12},{x});
+\addplot[c4,domain=-3:6] ({(4-x)^2/16},{x});
+\addplot[gold,line width=1.4pt,dashed,domain=0:3,samples=2] {-x};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolvente $y=-x$}\quad $(k-y)^2=4kx$:\quad\leyenda{c0}{$k=\frac12$}\quad\leyenda{c1}{$1$}\quad\leyenda{c2}{$2$}\quad\leyenda{c3}{$3$}\quad\leyenda{c4}{$4$}}

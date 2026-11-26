@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\pgfplotsset{colormap={oscurot1}{color(0cm)=(c0); color(0.5cm)=(c1); color(1cm)=(lav)}}
+\begin{axis}[width=11cm,height=9cm,view={125}{25},axis lines=box,axis line style={muted,line width=0.4pt},
+  tick style={draw=none},xticklabels={},yticklabels={},zticklabels={},
+  xlabel={$x$},ylabel={$y$},zlabel={$y'$},label style={fg,font=\small},
+  ylabel style={rotate=-90},zlabel style={rotate=-90},
+  xmin=-1,xmax=1,ymin=-1,ymax=1,zmin=0.5,zmax=3.5,z buffer=sort,clip=false]
+\addplot3[surf,shader=faceted,faceted color=bg,fill=c2,fill opacity=0.35,
+  domain=-1:1,domain y=-1:1,samples=13,z filter/.code={\def\pgfmathresult{0.5}}] {0};
+\addplot3[surf,shader=faceted,faceted color=bg,colormap name=oscurot1,
+  domain=-1:1,domain y=-1:1,samples=15,opacity=0.9] {2+x*y};
+\coordinate (P) at (axis cs:0,0,2);
+\fill[gold] (P) circle (2pt);
+\draw[gold,line width=1pt,-{Stealth[length=6pt]}] (P) -- (axis cs:0,0,3.2);
+\node[gold,font=\small,anchor=west,fill=boxbg,fill opacity=0.85,text opacity=1,inner sep=2pt] at (axis cs:0,0,3.25) {$\vec n=X_u\times Y_v$};
+\node[fg,font=\small,anchor=east,fill=boxbg,fill opacity=0.85,text opacity=1,inner sep=2pt] at (axis cs:-0.12,0,2.05) {$(X,Y,P)$};
+\node[c2,font=\scriptsize,anchor=north] at (axis cs:1,-1,0.5) {plano $(x,y)$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize Interpretación paramétrica: inmersión de $F(x,y,y')=0$ en $\mathbb R^3$}

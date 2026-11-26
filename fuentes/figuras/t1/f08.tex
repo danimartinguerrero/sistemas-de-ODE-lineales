@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=12cm,height=6.4cm,xmin=0,xmax=1.12,ymin=0,ymax=0.56,
+  xtick={0,0.25,0.5,0.75,1},ytick={0,0.25,0.5},xlabel={$x$},ylabel={$y$},samples=150,
+  every axis y label/.style={at={(axis description cs:0,1.0)},anchor=south,yshift=3pt}]
+\addplot[draw=none,fill=gold,fill opacity=0.07,domain=0:1,samples=60] {0.5-x^2/2} \closedcycle;
+\pgfplotsinvokeforeach{0,...,5}{
+  \pgfmathsetmacro\al{15+12*#1}
+  \pgfmathsetmacro\xf{sin(2*\al)}
+  \addplot[c#1,line width=0.7pt,domain=0:\xf] {x*tan(\al)-x^2/(2*cos(\al)^2)};
+}
+\addplot[gold,line width=1.3pt,domain=0:1] {0.5-x^2/2};
+\node[gold,font=\scriptsize,anchor=south west] at (axis cs:0.62,0.33) {parábola de seguridad $y=\frac{v^2}{2g}-\frac{gx^2}{2v^2}$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize trayectorias con $\alpha=15^\circ,27^\circ,\dots,75^\circ$ (de azul a rojo); $v=g=1$}

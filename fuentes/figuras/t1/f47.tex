@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=11cm,height=7.6cm,xmin=0,xmax=4,ymin=0,ymax=4,xtick={0,1,2,3,4},ytick={0,1,2,3,4},xlabel={$x$},ylabel={$y$},samples=2,domain=0:4]
+\addplot[c0,line width=0.75pt] {-(0.2)*x+2*sqrt((0.2))};
+\addplot[c1,line width=0.75pt] {-(0.5)*x+2*sqrt((0.5))};
+\addplot[c2,line width=0.75pt] {-(1)*x+2*sqrt((1))};
+\addplot[c3,line width=0.75pt] {-(2)*x+2*sqrt((2))};
+\addplot[c4,line width=0.75pt] {-(4)*x+2*sqrt((4))};
+\addplot[gold,line width=1.4pt,dashed,samples=150,domain=0.25:4] {1/x};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolvente $y=A/(2x)$}\quad $A=2$:\quad \leyenda{c0}{$c=-0.2$}\quad\leyenda{c1}{$c=-0.5$}\quad\leyenda{c2}{$c=-1$}\quad\leyenda{c3}{$c=-2$}\quad\leyenda{c4}{$c=-4$}}

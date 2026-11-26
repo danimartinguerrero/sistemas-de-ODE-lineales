@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12cm,height=7.6cm,xmin=-2,xmax=4,ymin=-3,ymax=3,
+  xtick={-2,-1,1,2,3,4},ytick={-3,-2,-1,1,2,3},xlabel={$x$},ylabel={$y$},samples=2]
+\addplot[rulec,line width=0.4pt,-{Stealth[length=2.4pt,width=2pt]},
+  quiver={u=\thisrow{u},v=\thisrow{v}}] table[x=x,y=y] {figuras/t1/datos/f10_campo.dat};
+\pgfplotsinvokeforeach{-1,0,1,2}{
+  \addplot[c1,dashed,line width=0.7pt,domain=-2:4] {x-(#1)};
+}
+\foreach \k/\xs in {-1/{-1.5,-0.5,0.5,1.5},0/{-1.2,-0.2,0.8,1.8,2.8},1/{-1,0,1,2,3},2/{0,1,2,3}}{
+  \foreach \xx in \xs {
+    \pgfmathsetmacro\yy{\xx-\k}
+    \pgfmathsetmacro\dx{0.22/sqrt(1+\k*\k)}
+    \pgfmathsetmacro\dy{\k*\dx}
+    \edef\temp{\noexpand\draw[gold,line width=0.9pt,-{Stealth[length=3.5pt]}] (axis cs:\xx-\dx,\yy-\dy) -- (axis cs:\xx+\dx,\yy+\dy);}\temp
+  }
+}
+\node[c1,font=\scriptsize,anchor=south east] at (axis cs:-0.55,0.4) {$k=-1$};
+\node[c1,font=\scriptsize,anchor=south east] at (axis cs:3.0,2.45) {$k=0$};
+\node[c1,font=\scriptsize,anchor=north west] at (axis cs:3.35,2.2) {$k=1$};
+\node[c1,font=\scriptsize,anchor=north west] at (axis cs:3.35,1.2) {$k=2$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{c1}{isoclinas $x-y=k$}\qquad\textcolor{gold}{$\boldsymbol\rightarrow$} pendiente $y'=k$ sobre cada isoclina}

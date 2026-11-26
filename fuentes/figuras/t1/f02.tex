@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=12cm,height=7.2cm,xmin=-4,xmax=4,ymin=-15,ymax=15,
+  xtick={-4,-3,-2,-1,1,2,3,4},ytick={-15,-10,-5,5,10,15},xlabel={$x$},ylabel={$y$},
+  unbounded coords=jump]
+\addplot[c0,sharp plot] table[x=x,y=y1] {figuras/t1/datos/f02.dat};
+\addplot[c1,sharp plot] table[x=x,y=y2] {figuras/t1/datos/f02.dat};
+\addplot[c2,sharp plot] table[x=x,y=y3] {figuras/t1/datos/f02.dat};
+\addplot[c3,sharp plot] table[x=x,y=y4] {figuras/t1/datos/f02.dat};
+\addplot[c4,sharp plot] table[x=x,y=y5] {figuras/t1/datos/f02.dat};
+\addplot[c5,sharp plot] table[x=x,y=y6] {figuras/t1/datos/f02.dat};
+\addplot[lav,sharp plot] table[x=x,y=y7] {figuras/t1/datos/f02.dat};
+\addplot[fg,line width=1.4pt,domain=-4:4,samples=2] {x};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{fg}{solución singular $y=x$}\quad
+\leyenda{c0}{$C_1=-3$}\quad\leyenda{c1}{$-1.5$}\quad\leyenda{c2}{$-0.75$}\quad\leyenda{c3}{$0.5$}\quad
+\leyenda{c4}{$1.5$}\quad\leyenda{c5}{$3$}\quad\leyenda{lav}{$6$}}

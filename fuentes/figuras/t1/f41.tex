@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=10cm,height=8cm,xmin=-0.3,xmax=3.5,ymin=-0.3,ymax=4.5,axis lines=middle,
+  xtick={1,2,3},ytick={1,2,3,4},xlabel={$x$},ylabel={$y$},
+  every axis x label/.style={at={(ticklabel* cs:1.0)},anchor=west,xshift=3pt},
+  every axis y label/.style={at={(ticklabel* cs:1.0)},anchor=south,yshift=2pt}]
+\fill[acc,opacity=0.13] (axis cs:0,0) -- (axis cs:1,2) -- (axis cs:2,0) -- cycle;
+\draw[c2,line width=0.8pt] (axis cs:0,0) -- (axis cs:1,2);
+\addplot[c5,line width=0.9pt,domain=-0.2:2.3,samples=2] {4-2*x};
+\addplot[c0,line width=1.3pt,domain=0.45:3.5,samples=200] {2/x};
+\addplot[only marks,mark=*,mark size=1.8pt,fg] coordinates {(1,2) (2,0) (0,0)};
+\node[fg,font=\scriptsize,anchor=south west] at (axis cs:1.05,2.05) {$A(x,y)$};
+\node[fg,font=\scriptsize,anchor=south west] at (axis cs:2.05,0.08) {$B(x_c,0)$};
+\node[fg,font=\scriptsize,anchor=north east] at (axis cs:-0.03,-0.03) {$O$};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{$y=2/x$}\qquad\leyenda{c5}{tangente en $A$}\qquad\leyenda{c2}{radio vector $OA$}}

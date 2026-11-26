@@ -1,0 +1,106 @@
+% !TEX program = lualatex
+% Tema 1: mismo contenido que la versión anterior (originales/Tema1_main_original.tex);
+% sólo cambia el formato. El cuerpo está en Tema1_cuerpo.tex.
+\documentclass[11pt,twoside]{article}
+\usepackage{apuntes-oscuro}
+\usepackage{float,centernot,multirow,subcaption}
+\usetikzlibrary{3d,patterns,shadings,angles,quotes,matrix,bending,decorations.markings}
+
+\asignatura{Ecuaciones Diferenciales}
+\cabecera{Tema 1\ \ ·\ \ EDO de primer orden}
+\hypersetup{pdftitle={Tema 1. Ecuaciones diferenciales de primer orden},pdfauthor={Daniel Martín Guerrero}}
+
+% ---------- notación del documento original ----------
+\renewcommand{\Id}{\mathrm{Id}}
+\DeclareMathOperator{\Hom}{Hom}
+\counterwithout{figure}{section}
+
+% ---------- numeración original: un contador por tipo de entorno ----------
+\makeatletter
+\@for\@tipo:={definicion,ejemplo,ejercicio,observacion,proposicion,corolario,teorema,lema}\do{%
+  \newcounter{c@@\@tipo}[section]}
+\newcommand\@numtipo[1]{\stepcounter{c@@#1}\xdef\@numfijo{\thesection.\arabic{c@@#1}}}
+\@for\@tipo:={definicion,ejemplo,ejercicio,observacion,proposicion,corolario,teorema,lema}\do{%
+  \edef\@tmp{\noexpand\AddToHook{env/\@tipo/before}{\noexpand\@numtipo{\@tipo}}}\@tmp}
+% Ejercicio (etiqueta dorada en línea, texto recto)
+\NewDocumentEnvironment{ejercicio}{O{}}
+  {\par\addvspace{10pt}\Needspace{6\baselineskip}\refstepcounter{entorno}\noindent
+   {\color{gold}\bfseries Ejercicio~\theentorno}%
+   \if\relax\detokenize{#1}\relax\else\ \textcolor{muted}{(#1)}\fi\textcolor{gold}{.}\ \ignorespaces}
+  {\par\addvspace{4pt}}
+\AddToHook{env/ejercicio/end}{\global\let\@numfijo\relax}
+\makeatother
+
+% ---------- cajas del documento original, en el estilo oscuro ----------
+\tcbset{
+  caja_ejercicio/.style={baseoscuro,colframe=acc,boxed title style={colframe=acc},
+    title={\textcolor{acc}{\textsc{Resolución}}}},
+  recuadro/.style={enhanced,breakable,colback=boxbg,coltext=fg,frame hidden,
+    borderline west={2.2pt}{0pt}{lav},arc=0pt,left=10pt,right=10pt,top=7pt,bottom=7pt,
+    before skip=12pt,after skip=12pt,
+    before upper={\textcolor{lav}{\textsc{#1}}\par\vspace{4pt}}},
+}
+\pgfplotsset{t1/.style={oscuro,axis lines=left,
+  every axis x label/.style={at={(axis description cs:1.0,0)},anchor=west,xshift=5pt},
+  every axis y label/.style={at={(axis description cs:0,1.0)},anchor=south,yshift=3pt},samples=200},
+  t1c/.style={t1,extra x ticks={0},extra y ticks={0},extra x tick labels={},extra y tick labels={},
+  extra tick style={grid=major,major grid style={rulec,line width=0.4pt},major tick length=0pt}}}
+\newcommand\leyenda[2]{\textcolor{#1}{\rule[2.2pt]{11pt}{1.1pt}}\ #2}
+\newcommand\leyendad[2]{\textcolor{#1}{\rule[2.2pt]{3.5pt}{1.1pt}\,\rule[2.2pt]{3.5pt}{1.1pt}}\ #2}
+
+\begin{document}
+
+% =====================================================================
+%  PORTADA
+% =====================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{-0.6cm}
+\includegraphics[width=4.6cm]{figuras/usal.png}\par
+\vspace{0.75cm}
+{\color{sky}\rule{\textwidth}{0.5pt}}\par
+\vspace{0.55cm}
+{\color{muted}\small\textls[220]{\textsc{Facultad de Ciencias}}\quad·\quad\textls[220]{\textsc{Grado en Física}}}\par
+\vspace{1.25cm}
+{\color{acc}\textls[260]{\textsc{Ecuaciones Diferenciales}}}\par
+\vspace{0.2cm}
+{\color{muted}\small\textls[260]{\textsc{Tema 1}}}\par
+\vspace{1.25cm}
+{\fontsize{27}{33}\selectfont\bfseries Ecuaciones diferenciales\par}
+\vspace{0.12cm}
+{\fontsize{19}{24}\selectfont\bfseries de primer orden\par}
+\vspace{0.55cm}
+{\color{acc}\rule{2.4cm}{0.8pt}}\par
+\vspace{0.45cm}
+{\color{muted}\small\itshape Familias de curvas y envolventes\quad·\quad Campo de direcciones\quad·\quad Separables y lineales\par
+Bernoulli y Riccati\quad·\quad Pfaff y factor integrante\quad·\quad Lagrange y Clairaut\par}
+\vspace{0.45cm}
+\includegraphics[width=0.86\textwidth]{figuras/portada_t1.png}\par
+\vspace{0.35cm}
+{\small$\displaystyle y'=f(x,y),\qquad y(x_0)=y_0\qquad\Longrightarrow\qquad y=\varphi(x,C)$\par}
+\vfill
+{\color{sky}\rule{\textwidth}{0.5pt}}\par
+\vspace{0.3cm}
+\begin{minipage}[t]{0.32\textwidth}\raggedright
+{\color{acc}\footnotesize\textls[200]{\textsc{Autor}}}\par\vspace{2pt}
+{\small Daniel Martín Guerrero}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\textwidth}\centering
+{\color{acc}\footnotesize\textls[200]{\textsc{Profesorado}}}\par\vspace{2pt}
+{\small Pilar García Estévez\\ José Beltrán Jiménez\\ María Pérez Garrote}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\textwidth}\raggedleft
+{\color{acc}\footnotesize\textls[200]{\textsc{Apuntes formalizados}}}\par\vspace{2pt}
+{\small Salamanca, curso 2026/2027}\\[1pt]
+{\footnotesize\color{muted}Teoría y seminarios resueltos}
+\end{minipage}
+\end{titlepage}
+
+\setcounter{page}{2}
+{\hypersetup{linkcolor=fg}\tableofcontents}
+\clearpage
+
+\input{Tema1_cuerpo}
+
+\end{document}

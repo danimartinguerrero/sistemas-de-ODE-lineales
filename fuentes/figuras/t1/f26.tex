@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11cm,height=8cm,xmin=-6,xmax=6,ymin=-6,ymax=8,xtick={-6,-4,-2,2,4,6},ytick={-6,-4,-2,2,4,6,8},xlabel={$x$},ylabel={$y$},samples=2,domain=-6:6]
+\addplot[c0,line width=0.75pt] {(-3)*x+(-3)^2};
+\addplot[c1,line width=0.75pt] {(-2)*x+(-2)^2};
+\addplot[c2,line width=0.75pt] {(-1)*x+(-1)^2};
+\addplot[c3,line width=0.75pt] {(0)*x+(0)^2};
+\addplot[c4,line width=0.75pt] {(1)*x+(1)^2};
+\addplot[c5,line width=0.75pt] {(2)*x+(2)^2};
+\addplot[lav,line width=0.75pt] {(3)*x+(3)^2};
+\addplot[gold,line width=1.4pt,dashed,samples=150] {-x^2/4};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolvente $y=-x^2/4$}\quad \leyenda{c0}{$k=-3$}\quad\leyenda{c1}{$k=-2$}\quad\leyenda{c2}{$k=-1$}\quad\leyenda{c3}{$k=0$}\quad\leyenda{c4}{$k=1$}\quad\leyenda{c5}{$k=2$}\quad\leyenda{lav}{$k=3$}}

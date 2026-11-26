@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=12cm,height=6.6cm,xmin=0,xmax=6.4,ymin=-1.6,ymax=1.6,
+  xtick={0,1.5708,3.1416,4.7124,6.2832},xticklabels={$0$,$\frac\pi2$,$\pi$,$\frac{3\pi}2$,$2\pi$},
+  ytick={-1.5,-1,-0.5,0,0.5,1,1.5},xlabel={$x$},ylabel={$y$},samples=200,domain=0:6.2832]
+\addplot[rulec,line width=0.4pt,samples=2] {0};
+\addplot[c0,line width=0.7pt] {1*sin(deg(x-0))};
+\addplot[c1,line width=0.7pt] {1.5*sin(deg(x-pi/4))};
+\addplot[c2,line width=0.7pt] {0.5*sin(deg(x+pi/2))};
+\addplot[c5,line width=1.4pt] {-cos(deg(x))};
+\addplot[only marks,mark=*,mark size=2pt,gold] coordinates {(3.1416,1)};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c5}{solución particular $y=-\cos x$}\quad\textcolor{gold}{$\bullet$} condición inicial $(\pi,1)$\quad\leyenda{c0}{$C_1=1,C_2=0$}\quad\leyenda{c1}{$C_1=1.5,C_2=\frac\pi4$}\quad\leyenda{c2}{$C_1=0.5,C_2=-\frac\pi2$}}

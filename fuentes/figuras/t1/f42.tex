@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11cm,height=7.6cm,xmin=-2,xmax=5,ymin=0,ymax=5,
+  xtick={-2,-1,1,2,3,4,5},ytick={1,2,3,4,5},xlabel={$x$},ylabel={$y$},samples=250,domain=0.3:5]
+\addplot[c0] ({(4+1*x^2)/x},{x}); \addplot[c1] ({(4+0.5*x^2)/x},{x});
+\addplot[c2] ({(4-0*x^2)/x},{x}); \addplot[c3] ({(4-0.5*x^2)/x},{x}); \addplot[c5] ({(4-1*x^2)/x},{x});
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize $Cy^2+xy-4=0$ ($a^2=A=4$):\quad\leyenda{c0}{$C=-1$}\quad\leyenda{c1}{$-0.5$}\quad\leyenda{c2}{$0$}\quad\leyenda{c3}{$0.5$}\quad\leyenda{c5}{$1$}}

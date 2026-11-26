@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=11.5cm,height=8cm,xmin=-3,xmax=2.5,ymin=-4,ymax=5,xtick={-3,-2,-1,1,2},ytick={-4,-2,2,4},xlabel={$x$},ylabel={$y$},unbounded coords=jump]
+\addplot[c0,sharp plot] table {figuras/t1/datos/f25_0.dat};
+\addplot[c1,sharp plot] table {figuras/t1/datos/f25_1.dat};
+\addplot[c2,sharp plot] table {figuras/t1/datos/f25_2.dat};
+\addplot[c3,sharp plot] table {figuras/t1/datos/f25_3.dat};
+\addplot[c4,sharp plot] table {figuras/t1/datos/f25_4.dat};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{$k=-1.5$}\quad\leyenda{c1}{$-0.5$}\quad\leyenda{c2}{$0.5$}\quad\leyenda{c3}{$1.5$}\quad\leyenda{c4}{$2.5$}}

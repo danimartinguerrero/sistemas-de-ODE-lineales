@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=11cm,height=7.6cm,xmin=-4,xmax=4,ymin=-1,ymax=8,xtick={-4,-2,0,2,4},ytick={0,2,4,6,8},xlabel={$x$},ylabel={$y$},samples=150,domain=-4:4]
+\addplot[c0,line width=0.75pt] {x^2/2+(-2)*x+(-2)^2};
+\addplot[c1,line width=0.75pt] {x^2/2+(-1)*x+(-1)^2};
+\addplot[c2,line width=0.75pt] {x^2/2+(0)*x+(0)^2};
+\addplot[c3,line width=0.75pt] {x^2/2+(1)*x+(1)^2};
+\addplot[c4,line width=0.75pt] {x^2/2+(2)*x+(2)^2};
+\addplot[gold,line width=1.4pt,dashed] {x^2/4};\addplot[rulec,line width=0.4pt,samples=2] {0};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyendad{gold}{envolvente $y=x^2/4$}\quad \leyenda{c0}{$C=-2$}\quad\leyenda{c1}{$C=-1$}\quad\leyenda{c2}{$C=0$}\quad\leyenda{c3}{$C=1$}\quad\leyenda{c4}{$C=2$}}

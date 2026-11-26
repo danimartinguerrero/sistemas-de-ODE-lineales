@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\begin{axis}[t1c,width=9cm,height=10cm,axis equal image,xmin=-0.2,xmax=2.4,ymin=-3.5,ymax=1.5,
+  xtick={1,2},ytick={-3,-2,-1,1},xlabel={$x$},ylabel={$y$},clip mode=individual,
+  declare function={f(\x)=sqrt(4-\x^2)+2*ln((2-sqrt(4-\x^2))/\x);}]
+\addplot[c0,line width=1.1pt,domain=0.03:2,samples=250] {f(x)};
+\addplot[c5,line width=1.2pt,domain=0:1,samples=2] {-1.73205*(x-1)-0.90186};
+\draw[muted,line width=0.4pt,dashed] (axis cs:0,-0.90186) -- (axis cs:1,-0.90186);
+\addplot[gold,line width=0.6pt,-{Stealth[length=4pt]},domain=120:180,samples=30] ({1+0.3*cos(x)},{-0.90186+0.3*sin(x)});
+\node[gold,font=\scriptsize] at (axis cs:0.57,-0.72) {$\alpha$};
+\node[c5,font=\scriptsize,anchor=south west] at (axis cs:0.55,0.05) {$\ell=2$};
+\addplot[only marks,mark=*,mark size=1.8pt,fg] coordinates {(1,-0.90186) (0,0.83019)};
+\node[fg,font=\scriptsize,anchor=west] at (axis cs:1.07,-0.9) {$(x,y)$};
+\node[fg,font=\scriptsize,anchor=east] at (axis cs:-0.06,0.83) {$A(0,y_1)$};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[t1,width=13cm,height=6.2cm,xmin=-10,xmax=10,ymin=-20,ymax=20,
+  xtick={-10,-7.5,-5,-2.5,0,2.5,5,7.5,10},ytick={-20,-10,0,10,20},xlabel={$x$},ylabel={$y(x)$},samples=500]
+\addplot[rulec,line width=0.4pt,domain=-10:10,samples=2] {0};
+\addplot[c0,domain=-10:10] {1*sin(deg(2*x))+1*cos(deg(2*x))+8/9*sin(deg(x))+4/3*x*cos(deg(x))};
+\addplot[c2,domain=-10:10] {2*sin(deg(2*x))+3*cos(deg(2*x))+8/9*sin(deg(x))+4/3*x*cos(deg(x))};
+\addplot[c4,domain=-10:10] {3*sin(deg(2*x))+4*cos(deg(2*x))+8/9*sin(deg(x))+4/3*x*cos(deg(x))};
+\end{axis}
+\end{tikzpicture}\\[2pt]
+{\scriptsize\leyenda{c0}{$c_1=1,\ c_2=1$}\qquad\leyenda{c2}{$c_1=2,\ c_2=3$}\qquad\leyenda{c4}{$c_1=3,\ c_2=4$}}
